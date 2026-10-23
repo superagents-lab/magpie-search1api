@@ -1,9 +1,10 @@
 {
   "package": "magpie-search1api",
   "name": "Search1API",
+  "icon": "https://s1.dev/icon.png",
   "kind": "tools",
   "summary": {
-    "en": "Web search, news, agentic search and page retrieval with Search1API. Sign in with OAuth or an API key.",
-    "zh": "通过 Search1API 搜索网页、新闻，使用智能搜索并读取页面；支持 OAuth 和 API key 登录。"
+    "en": "Search1API web search, news, agentic search, page retrieval, sitemaps and trends through Magpie's tools MCP server. Sign in with OAuth or an API key.",
+    "zh": "通过 Magpie 的工具 MCP 服务使用 Search1API 网页搜索、新闻、智能搜索、页面读取、站点链接和趋势；支持 OAuth 或 API key 登录。"
   }
 }
