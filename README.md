@@ -11,19 +11,24 @@ TypeScript SDK.
 In Magpie, open **Plugins → Add plugin** and enter:
 
 ```text
-github:superagents-lab/magpie-search1api
+magpie-search1api
 ```
 
 Or use the terminal:
 
 ```sh
+magpie plugin add magpie-search1api
+```
+
+You can also install directly from GitHub:
+
+```sh
 magpie plugin add github:superagents-lab/magpie-search1api
 ```
 
-The repository includes its TypeScript entry, so GitHub installation requires
-no build. Magpie runs it with Bun and installs its npm dependencies. After the
-first npm release, installation will also support `magpie plugin add
-magpie-search1api`.
+Both the npm package and repository include the TypeScript entry, so no build
+is required during installation. Magpie runs it with Bun and installs its npm
+dependencies.
 
 ## Sign in
 
@@ -180,11 +185,13 @@ The GitHub repository has the `magpie-plugin` topic for discovery in Magpie.
 `kind: "tools"`; listing requires a PR to
 [magpie-community/plugins](https://github.com/magpie-community/plugins).
 
-Before the first npm release, an npm maintainer must publish this new package
-and configure its GitHub Trusted Publisher for this repository's `release.yml`
-workflow and `npm` environment. Subsequent GitHub releases named `v<version>`
-can publish through the included workflow. GitHub installation is available
-independently of npm publication and community listing.
+The Release workflow uses npm trusted publishing. An npm maintainer must
+configure the package's GitHub Trusted Publisher for
+`superagents-lab/magpie-search1api`, workflow `release.yml`, environment `npm`,
+with direct publishing allowed. Subsequent GitHub releases named `v<version>`
+can then publish through the workflow. A version already published manually is
+left in place. GitHub installation is available independently of npm
+publication and community listing.
 
 ## License
 

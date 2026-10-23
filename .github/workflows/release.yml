@@ -26,4 +26,15 @@ jobs:
         run: node -e "if(process.env.RELEASE_TAG !== 'v'+require('./package.json').version) throw new Error('Release tag and package version differ')"
       - run: npm ci --ignore-scripts
       - run: npm test
+      - name: Check whether this version is already on npm
+        id: npm
+        run: |
+          package_spec=$(node -p "const p=require('./package.json'); p.name+'@'+p.version")
+          if npm view "$package_spec" version > /dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::$package_spec is already published; keeping the existing version."
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
       - run: npm publish --provenance --access public
+        if: steps.npm.outputs.published != 'true'
