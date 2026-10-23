@@ -1,0 +1,9 @@
+{
+  "package": "magpie-search1api",
+  "name": "Search1API",
+  "kind": "tools",
+  "summary": {
+    "en": "Web search, news, agentic search and page retrieval with Search1API. Sign in with OAuth or an API key.",
+    "zh": "通过 Search1API 搜索网页、新闻，使用智能搜索并读取页面；支持 OAuth 和 API key 登录。"
+  }
+}
